@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Raw Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #content {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <iframe id="content" src="https://raw.githubusercontent.com/user/repository/branch/file" title="GitHub Raw Content"></iframe>
+    </div>
+
+    <script>
+        // Change the background color based on the user's system theme
+        const userTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.body.style.backgroundColor = userTheme === 'dark' ? '#333' : '#fff';
+        document.body.style.color = userTheme === 'dark' ? '#fff' : '#000';
+    </script>
+</body>
+</html>
